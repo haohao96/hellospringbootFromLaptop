@@ -1,0 +1,11 @@
+server:
+  port: 8086
+
+pyhuser:
+  name: pi yihao
+  password: psw
+
+spring:
+  mvc:
+    favicon:
+      enabled: false
