@@ -10,12 +10,18 @@
 	
 	</head>
 	<body>
-		<br><br><br>
+		<br>
+<!--		thymeleaf的fragment，就是将不同页面相同的部分抽取出来，实现代码复用-->
+<!--		这样就建立了一个fragment，然后在index.html中插入进去就OK了-->
+		<p th:fragment="logo">皮皮昊的logo</p>
+		<br>
+		<p style="color:red;text-align: center" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+		<br>
 		<div class="container" align=center>
-			<form action="/login" class="form-group">
+			<form th:action="@{/dologin}" class="form-group">
 				<input type="text" class="form-control" name="name" th:placeholder="#{login.placeholder_username}"><br>
 				<input type="password" class="form-control" name="password" th:placeholder="#{login.placeholder_password}"><br>
-				<input type="button" th:value="#{login.btn_sumbit}">
+				<input type="submit" th:value="#{login.btn_sumbit}">
 			</form>
 			<a class="" th:href="@{/login(l='zh_CN')}">中文</a>
 			<a class="" th:href="@{/login(l='en_US')}">English</a>

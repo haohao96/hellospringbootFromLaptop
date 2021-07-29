@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<title>index</title>
 	</head>
 	<body>
-	hello,我是皮一豪
+		<br>
+<!--		thymeleaf的插入fragment，这里写login或者login.html都可以-->
+			<div th:insert="~{login :: logo}"></div>
+		<br>
+	hello,我是 <p th:text="${session.loginuser}"></p>
 	<br>
 <!--	<h2 th:object="${user}">-->
 <!--		<p>first-name: <span th:text="*{name.split(' ')[0]}"></span></p>-->
