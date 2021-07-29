@@ -33,10 +33,10 @@ public class MvcConfig implements WebMvcConfigurer {
         return new MyLocaleResolver();
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/login","/","/dologin","/css/*","/js/*");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new LoginHandlerInterceptor())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/login","/","/dologin","/css/*","/js/*");
+//    }
 }

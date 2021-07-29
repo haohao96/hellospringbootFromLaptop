@@ -11,6 +11,8 @@
 		<br>
 	hello,我是 <p th:text="${session.loginuser}"></p>
 	<br>
+		<a th:href="@{/employeeList}" th:text="employeeList"></a>
+		
 <!--	<h2 th:object="${user}">-->
 <!--		<p>first-name: <span th:text="*{name.split(' ')[0]}"></span></p>-->
 <!--		<p>second-name: <span th:text="*{name.split(' ')[1]}"></span></p>-->

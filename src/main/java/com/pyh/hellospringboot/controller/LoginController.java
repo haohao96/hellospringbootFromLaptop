@@ -14,7 +14,8 @@ public class LoginController {
     public String login(@RequestParam String name,
                         @RequestParam String password,
                         Model model,
-                        HttpSession session) {
+                        HttpSession session)
+    {
         if (password.equalsIgnoreCase("6"))
         {
             session.setAttribute("loginuser",name);
