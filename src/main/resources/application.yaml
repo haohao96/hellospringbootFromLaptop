@@ -11,3 +11,5 @@ spring:
   mvc:
     favicon:
       enabled: false
+  messages:
+    basename: i18n/login

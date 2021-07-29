@@ -25,4 +25,12 @@ class HellospringbootApplicationTests {
         System.out.println(departmentDao.getDepartmentById(1));
     }
 
+    @Test
+    void testSplit()
+    {
+        String s="zn_CN";
+        String res[]=s.split("_");
+        System.out.println(res[1]);
+    }
+
 }

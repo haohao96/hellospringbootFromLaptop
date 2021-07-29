@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<title>login</title>
+		<title>登录</title>
 <!--		<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">-->
 		<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
 		<link rel="stylesheet" th:href="@{/js/bootstrap.js}">
@@ -13,12 +13,12 @@
 		<br><br><br>
 		<div class="container" align=center>
 			<form action="/login" class="form-group">
-				<input type="text" class="form-control" name="name" placeholder="please enter username"><br>
-				<input type="password" class="form-control" name="password" placeholder="please enter password"><br>
-				<input type="button" value="submit">
+				<input type="text" class="form-control" name="name" th:placeholder="#{login.placeholder_username}"><br>
+				<input type="password" class="form-control" name="password" th:placeholder="#{login.placeholder_password}"><br>
+				<input type="button" th:value="#{login.btn_sumbit}">
 			</form>
-			<button class="btn-success">中文</button>
-			<button class="btn-success">English</button>
+			<a class="" th:href="@{/login(l='zh_CN')}">中文</a>
+			<a class="" th:href="@{/login(l='en_US')}">English</a>
 			
 		</div>
 	</body>
