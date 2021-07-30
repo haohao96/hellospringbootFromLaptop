@@ -6,7 +6,6 @@
 		<div th:insert="~{login::bootstrap}"></div>
 	</head>
 	<body>
-		
 		<div class="container">
 			<h1 align=center>修改员工信息</h1><br>
 			<form class="text-center" th:action="@{${'/update/'}+${updateEmployee.getId()}}" method="post">
@@ -36,7 +35,7 @@
 						<label for="id">Department:</label>
 						<select id="department" name="department.id" class="form-control">
 							<option th:each="dept:${departments}"
-									th:selected="${updateEmployee.getDepartment().getId()==dept.getId()}"
+							        th:selected="${updateEmployee.getDepartment().getId()==dept.getId()}"
 							        th:text="${dept.getName()}"
 							        th:value="${dept.getId()}"></option>
 						</select>
