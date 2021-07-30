@@ -38,7 +38,7 @@
 					<a class="btn btn-success" th:href="@{${'/update/'}+${emp.getId()}}">编辑</a>
 <!--					<a class="btn btn-success" th:href="@{/update/(id=${emp.getId()})}">编辑</a>-->
 					
-					<a class="btn btn-danger">删除</a>
+					<a class="btn btn-danger" th:href="@{${'/delete/'}+${emp.getId()}}">删除</a>
 				</td>
 			</tr>
 		</table>

@@ -54,6 +54,13 @@ public class EmployeeController {
         return "redirect:/employeeList";
     }
 
+    @RequestMapping("/delete/{id}")
+    public String deleteEmp(@PathVariable Integer id)
+    {
+        employeeDao.delete(id%100);
+        return "redirect:/employeeList";
+    }
+
     @GetMapping("/update/{id}")
     public String updateEmployee(@PathVariable Integer id,Model model)
     {
