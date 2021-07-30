@@ -39,7 +39,7 @@ public class EmployeeDao {
 
     public void save(Employee employee)
     {
-        employees.put(initId++, employee);
+        employees.put(employee.getId()%100, employee);
     }
 
     public void delete(Integer id)

@@ -35,8 +35,10 @@
 				<td th:text="${emp.getDepartment().getName()}"></td>
 <!--				<td th:text="${#dates.format(6666,'yyyy')}"></td>-->
 				<td>
-					<button class="btn btn-success">编辑</button>
-					<button class="btn btn-danger">删除</button>
+					<a class="btn btn-success" th:href="@{${'/update/'}+${emp.getId()}}">编辑</a>
+<!--					<a class="btn btn-success" th:href="@{/update/(id=${emp.getId()})}">编辑</a>-->
+					
+					<a class="btn btn-danger">删除</a>
 				</td>
 			</tr>
 		</table>

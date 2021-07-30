@@ -38,7 +38,9 @@
 						<label for="department">部门：</label>
 <!--						前端无法提交department对象作为employee对象的属性，所以提交了department的一个属性-->
 						<select id="department" name="department.id" class="form-control">
-							<option th:each="dep:${departments}" th:text="${dep.getName()}" th:value="${dep.getId()}"></option>
+							<option th:each="dep:${departments}"
+							        th:text="${dep.getName()}"
+							        th:value="${dep.getId()}"></option>
 						</select>
 					</div>
 				</div>

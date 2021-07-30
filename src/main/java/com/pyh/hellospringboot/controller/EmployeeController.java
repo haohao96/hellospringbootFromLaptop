@@ -7,10 +7,7 @@ import com.pyh.hellospringboot.pojo.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
@@ -54,6 +51,23 @@ public class EmployeeController {
     {
         employeeDao.save(employee);
 //        这样转发到list，之前数据库里的员工信息还会显示在list.html中。如果只是单纯的 return "emp/list"; 这样不会有之前的员工信息
+        return "redirect:/employeeList";
+    }
+
+    @GetMapping("/update/{id}")
+    public String updateEmployee(@PathVariable Integer id,Model model)
+    {
+        Employee employee = employeeDao.getEmployeeById(id%100); //数据库中的id和employee的id不一样，一个是一位数，一个是三位数
+        employeeDao.delete(id%100);
+        model.addAttribute("updateEmployee",employee);
+        model.addAttribute("departments",departmentDao.getDepartments());
+        return "emp/update";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateEmployee(Employee employee)
+    {
+        employeeDao.save(employee);
         return "redirect:/employeeList";
     }
 
